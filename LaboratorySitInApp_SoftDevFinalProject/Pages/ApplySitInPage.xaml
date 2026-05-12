@@ -1,12 +1,129 @@
-﻿<Window x:Class="LaboratorySitInApp_SoftDevFinalProject.ApplySitInPage"
+<Window x:Class="LaboratorySitInApp_SoftDevFinalProject.ApplySitInPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaboratorySitInApp_SoftDevFinalProject"
         mc:Ignorable="d"
-        Title="ApplySitInPage" Height="450" Width="800">
-    <Grid>
+        Title="ApplySitInPage" Height="450" Width="800"
+		WindowState="Maximized"
+	    ResizeMode="CanResize"
+	    Background="#F4F6F9">
 
-    </Grid>
+
+	<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+		<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+			<TextBlock Text="Application Hub"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Foreground="#1A1A2E"
+                       Margin="0,0,0,24"/>
+
+			<Border Background="White"
+                    CornerRadius="12"
+                    Padding="32"
+                    Width="520"
+                    HorizontalAlignment="Center">
+				<Border.Effect>
+					<DropShadowEffect Color="#757171" BlurRadius="12" ShadowDepth="2" Opacity="0.5"/>
+				</Border.Effect>
+
+				<StackPanel>
+
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+						<TextBlock Text="&#x27A3;" FontSize="18" Foreground="#29ABE2" Margin="0,0,8,0" VerticalAlignment="Center"/>
+						<TextBlock Text="Apply for Laboratory Sit-In"
+                                   FontSize="16"
+                                   FontWeight="SemiBold"
+                                   Foreground="#1A1A2E"
+                                   VerticalAlignment="Center"/>
+					</StackPanel>
+
+					<TextBlock Text="Purpose of Sit-in"
+                               FontSize="13"
+							   FontWeight="Bold"
+                               Foreground="#333333"
+                               Margin="0,0,0,6"/>
+					<TextBox x:Name="PurposeTextBox"
+                             Height="38"
+                             Padding="10,8"
+                             FontSize="13"
+                             Foreground="#999999"
+                             BorderBrush="#CCCCCC"
+                             BorderThickness="1"
+                             Background="White"
+                             HorizontalAlignment="Stretch"
+                             Margin="0,0,0,18"
+                             Text="e.g. Finishing Java Project Assignment"
+                             GotFocus="PurposeTextBox_GotFocus"
+                             LostFocus="PurposeTextBox_LostFocus">
+						<TextBox.Resources>
+							<Style TargetType="Border">
+								<Setter Property="CornerRadius" Value="6"/>
+							</Style>
+						</TextBox.Resources>
+					</TextBox>
+
+					<TextBlock Text="Duration (Minutes)"
+                               FontSize="13"
+							   FontWeight="Bold"
+                               Foreground="#333333"
+                               Margin="0,0,0,6"/>
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,24">
+						<TextBox x:Name="DurationTextBox"
+                                 Width="80"
+                                 Height="38"
+                                 Padding="10,8"
+                                 FontSize="13"
+                                 Foreground="#1A1A2E"
+                                 BorderBrush="#CCCCCC"
+                                 BorderThickness="1"
+                                 Background="White"
+                                 Text="60"
+                                 Margin="0,0,12,0"
+							     PreviewTextInput="DurationTextBox_PreviewTextInput"
+                                 DataObject.Pasting="DurationTextBox_Pasting">
+							<TextBox.Resources>
+								<Style TargetType="Border">
+									<Setter Property="CornerRadius" Value="6"/>
+								</Style>
+							</TextBox.Resources>
+						</TextBox>
+						<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+							<TextBlock Text="&#x23F1;" FontSize="13" Foreground="#888888" Margin="0,0,4,0" VerticalAlignment="Center"/>
+							<TextBlock Text="Max 4 hours"
+                                       FontSize="13"
+                                       Foreground="#888888"
+                                       VerticalAlignment="Center"/>
+						</StackPanel>
+					</StackPanel>
+
+					<Button x:Name="SubmitButton"
+                            Content="Submit Request"
+                            Height="44"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Background="#29ABE2"
+                            BorderThickness="0"
+                            HorizontalAlignment="Stretch"
+                            Cursor="Hand"
+                            Click="SubmitButton_Click">
+						<Button.Template>
+							<ControlTemplate TargetType="Button">
+								<Border Background="{TemplateBinding Background}"
+                                        CornerRadius="8"
+                                        Padding="0,10">
+									<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+								</Border>
+							</ControlTemplate>
+						</Button.Template>
+					</Button>
+
+				</StackPanel>
+			</Border>
+		</StackPanel>
+	</Grid>
 </Window>
